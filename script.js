@@ -1,7 +1,8 @@
 const RAW_ASSET_BASE = 'https://raw.githubusercontent.com/Rc3dMarine/r3d-marine-website/main/assets/';
 const legacyAsset = (name) => RAW_ASSET_BASE + name.split('/').map(encodeURIComponent).join('/');
-const MODEL_ASSET_VERSION = '20261015c';
-const modelAsset = (path) => `assets/models/${path}?v=${MODEL_ASSET_VERSION}`;
+const MODEL_RAW_BASE = 'https://raw.githubusercontent.com/Rc3dMarine/RC3D/main/assets/models/';
+const MODEL_ASSET_VERSION = '20261015d';
+const modelAsset = (path) => MODEL_RAW_BASE + path.split('/').map(encodeURIComponent).join('/') + `?v=${MODEL_ASSET_VERSION}`;
 
 const models = [
   {
