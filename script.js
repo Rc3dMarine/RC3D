@@ -1,5 +1,6 @@
 const RAW_ASSET_BASE = 'https://raw.githubusercontent.com/Rc3dMarine/r3d-marine-website/main/assets/';
 const asset = (name) => RAW_ASSET_BASE + name.split('/').map(encodeURIComponent).join('/');
+const localAsset = (name) => `assets/${name}`;
 
 const models = [
   {
@@ -11,12 +12,23 @@ const models = [
   {
     name: 'Mercury 400', category: 'Engine', status: 'Under development',
     description: 'Scale RC outboard model inspired by the Mercury 400, currently under development with focus on recognizable exterior proportions and printable multi-part construction for marine model projects.',
-    images: [asset('mercury-400-1.webp')], cults: ''
+    images: [
+      localAsset('mercury-400-1.webp'),
+      localAsset('mercury-400-2.webp'),
+      localAsset('mercury-400-3.webp')
+    ],
+    cults: ''
   },
   {
     name: 'Mercury 300', category: 'Engine', status: 'Under development',
     description: 'Compact functional-scale outboard project inspired by the Mercury 300, currently under development for 3D printing with an emphasis on the external engine form and RC integration.',
-    images: [asset('mercury-300-1.webp')], cults: ''
+    images: [
+      localAsset('mercury-300-1.webp'),
+      localAsset('mercury-300-2.webp'),
+      localAsset('mercury-300-3.webp'),
+      localAsset('mercury-300-4.webp')
+    ],
+    cults: ''
   },
   {
     name: 'Rafnar 1200 Cross Cabin', category: 'Hull', status: 'Available',
@@ -38,8 +50,9 @@ const models = [
   },
   {
     name: 'Universal Trim System', category: 'RC System', status: 'Under development',
-    description: 'Universal RC outboard trim mechanism under development, designed as a compact adjustable mounting system for scale marine projects and functional steering/trim integration.',
-    images: [asset('universal-trim-1.webp')], cults: ''
+    description: 'Universal RC outboard trim mechanism under development, built around a compact pivoting mount for functional scale outboard installations.',
+    images: [asset('universal-trim-1.webp')],
+    cults: ''
   }
 ];
 
@@ -59,6 +72,7 @@ function modelCard(model, index) {
     <div class="card-copy">
       <div class="card-meta"><span>${model.category}</span><span class="status-pill">${model.status}</span></div>
       <h3>${model.name}</h3>
+      <div class="card-action">VIEW GALLERY <span>↗</span></div>
     </div>`;
   const open = () => openModel(index);
   card.addEventListener('click', open);
@@ -70,9 +84,13 @@ models.forEach((model, index) => categoryTargets[model.category].appendChild(mod
 
 const latest = document.querySelector('#latest-grid');
 models.filter(m => m.status === 'Under development').slice(0, 3).forEach((model) => {
+  const index = models.indexOf(model);
   const item = document.createElement('div');
   item.className = 'latest-card';
+  item.tabIndex = 0;
   item.innerHTML = `<img src="${model.images[0]}" alt="${model.name}" loading="lazy"><span>${model.name}</span>`;
+  item.addEventListener('click', () => openModel(index));
+  item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') openModel(index); });
   latest.appendChild(item);
 });
 
@@ -107,6 +125,8 @@ function openModel(index) {
     modalThumbs.appendChild(btn);
     if (i === 0) setTimeout(() => setModalImage(src, model.name, btn), 0);
   });
+
+  modalThumbs.style.display = model.images.length > 1 ? 'grid' : 'none';
 
   if (model.cults) {
     modalCults.href = model.cults;
