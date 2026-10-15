@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="R3D Marine — functional scale marine models and RC engineering projects." />
+  <title>R3D Marine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="R3D Marine home">
+      <img src="https://raw.githubusercontent.com/Rc3dMarine/r3d-marine-website/main/assets/ChatGPT%20Image%20Aug%207%2C%202026%2C%2001_36_22%20AM.png" alt="R3D Marine logo" />
+    </a>
+    <nav class="desktop-nav">
+      <a href="#models">Models</a>
+      <a href="#engineering">Engineering</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media">
+        <img src="https://raw.githubusercontent.com/Rc3dMarine/r3d-marine-website/main/assets/Nimbus%20c11%20cite%201.png" alt="Nimbus C11 scale model" />
+        <div class="hero-shade"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">FUNCTIONAL SCALE ENGINEERING</p>
+        <h1>REAL MACHINES.<br>SCALED DOWN.</h1>
+        <p class="hero-text">Highly detailed functional RC replicas, designed and engineered from real marine machines.</p>
+        <a class="text-link" href="#models">EXPLORE MODELS <span>↗</span></a>
+      </div>
+    </section>
+
+    <section id="models" class="section models-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">01 / ENGINES</p>
+          <h2>ENGINES</h2>
+        </div>
+        <p>Functional scale outboard projects developed for printable RC applications.</p>
+      </div>
+      <div id="engines-grid" class="model-grid"></div>
+    </section>
+
+    <section class="section models-section alt-surface">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">02 / HULLS</p>
+          <h2>HULLS</h2>
+        </div>
+        <p>Scale marine models built around recognizable proportions, deck layouts and engineering details.</p>
+      </div>
+      <div id="hulls-grid" class="model-grid"></div>
+    </section>
+
+    <section class="section models-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">03 / RC SYSTEMS</p>
+          <h2>RC SYSTEMS</h2>
+        </div>
+        <p>Mechanical systems and functional components designed around scale marine use.</p>
+      </div>
+      <div id="systems-grid" class="model-grid"></div>
+    </section>
+
+    <section id="engineering" class="section engineering-section">
+      <div class="engineering-copy">
+        <p class="section-index">04 / ENGINEERING</p>
+        <h2>BUILT AROUND<br>FUNCTION.</h2>
+        <p>Each project begins with the real machine. Geometry, proportions, mechanical packaging and RC integration are considered together so the result is more than a display shell.</p>
+      </div>
+      <div class="engineering-panel">
+        <div><span>01</span><strong>REFERENCE</strong><p>Real marine machines are used as the visual and engineering starting point.</p></div>
+        <div><span>02</span><strong>CAD DEVELOPMENT</strong><p>Models are rebuilt around printable parts, assembly and practical RC constraints.</p></div>
+        <div><span>03</span><strong>PROTOTYPE</strong><p>Functional concepts are refined through physical testing and iteration.</p></div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <p class="section-index">05 / ABOUT R3D MARINE</p>
+      <div class="about-layout">
+        <h2>DESIGNED FOR PEOPLE WHO NOTICE THE DETAILS.</h2>
+        <p>R3D Marine creates functional scale replicas for people who see the engineering in every detail. Every project begins with the real machine — then earns its place on the water.</p>
+      </div>
+    </section>
+
+    <section class="section latest-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">06 / LATEST PROJECTS</p>
+          <h2>LATEST PROJECTS</h2>
+        </div>
+        <p>Current development work and recent releases from R3D Marine.</p>
+      </div>
+      <div id="latest-grid" class="latest-grid"></div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="footer-brand">R3D MARINE / 2026</div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/rc_3d_marine/" target="_blank" rel="noreferrer">Instagram</a>
+      <a href="https://cults3d.com/en/users/RC3DMARINE/3d-models" target="_blank" rel="noreferrer">Cults3D</a>
+      <a href="https://www.youtube.com/@rc3d114" target="_blank" rel="noreferrer">YouTube</a>
+      <a href="mailto:3dprintingandrc@gmail.com">3dprintingandrc@gmail.com</a>
+    </div>
+  </footer>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="menu-close" type="button" aria-label="Close menu">×</button>
+    <a href="#models">Models</a>
+    <a href="#engineering">Engineering</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="modal" id="model-modal" aria-hidden="true">
+    <button class="modal-close" type="button" aria-label="Close model">×</button>
+    <div class="modal-content">
+      <div class="modal-main-image-wrap"><img id="modal-main-image" src="" alt="" /></div>
+      <div class="modal-info">
+        <div>
+          <p id="modal-category" class="section-index"></p>
+          <h3 id="modal-title"></h3>
+          <p id="modal-description"></p>
+        </div>
+        <div>
+          <div id="modal-thumbs" class="modal-thumbs"></div>
+          <a id="modal-cults" class="primary-button" href="#" target="_blank" rel="noreferrer">VIEW ON CULTS3D ↗</a>
+          <div id="modal-status" class="development-note"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
