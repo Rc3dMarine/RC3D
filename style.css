@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
 :root{
   --bg:#0b0f12;
   --surface:#10161b;
@@ -27,10 +29,10 @@ button{font:inherit}
 .hero-media{position:absolute;inset:0}
 .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,9,12,.88) 0%,rgba(6,9,12,.54) 38%,rgba(6,9,12,.05) 74%),linear-gradient(0deg,rgba(6,9,12,.72),transparent 42%)}
-.hero-copy{position:relative;z-index:2;padding:0 clamp(24px,7vw,110px) 90px;max-width:900px}
+.hero-copy{position:relative;z-index:2;padding:0 clamp(24px,7vw,110px) 90px;max-width:980px}
 .eyebrow,.section-index{font-size:12px;letter-spacing:.23em;color:#b6c0c8;font-weight:600}
-h1,h2,h3,.footer-brand{font-family:"Barlow Condensed",sans-serif;letter-spacing:.02em}
-h1{font-size:clamp(68px,9vw,150px);line-height:.82;margin:18px 0 24px;font-weight:700}
+h2,h3,.footer-brand{font-family:"Barlow Condensed",sans-serif;letter-spacing:.02em}
+h1{font-family:"Michroma",sans-serif;font-size:clamp(46px,6.2vw,96px);line-height:.98;margin:18px 0 28px;font-weight:400;letter-spacing:.035em;text-transform:uppercase;text-shadow:0 4px 26px rgba(0,0,0,.4)}
 h2{font-size:clamp(52px,6vw,90px);line-height:.88;margin:10px 0 0}
 .hero-text{max-width:560px;color:#c5ccd2;line-height:1.7;font-size:18px}
 .text-link{display:inline-flex;gap:12px;margin-top:28px;padding-bottom:7px;border-bottom:1px solid #fff;font-size:13px;letter-spacing:.14em}
@@ -38,6 +40,11 @@ h2{font-size:clamp(52px,6vw,90px);line-height:.88;margin:10px 0 0}
 .section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:50px;margin-bottom:42px}
 .section-heading>p{max-width:470px;color:var(--muted);line-height:1.65;margin:0}
 .model-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+#hulls-grid{grid-template-columns:1fr;gap:24px}
+#hulls-grid .model-card{min-height:520px}
+#hulls-grid .model-card img{object-fit:cover;object-position:center}
+#hulls-grid .card-copy{left:28px;right:28px;bottom:28px}
+#hulls-grid .card-copy h3{font-size:clamp(46px,5vw,72px)}
 .model-card{position:relative;min-height:420px;border:1px solid var(--line);background:#0c1318;overflow:hidden;cursor:pointer}
 .model-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease,filter .45s ease}
 .model-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,8,10,.94) 0%,rgba(5,8,10,.42) 42%,transparent 74%)}
@@ -93,11 +100,15 @@ h2{font-size:clamp(52px,6vw,90px);line-height:.88;margin:10px 0 0}
   .desktop-nav{display:none}.menu-button{display:block}.site-header{height:78px;padding-left:20px;padding-right:20px}.brand img{width:126px;height:60px}
   .hero{min-height:72vh}.hero-copy{padding-bottom:60px}.hero-shade{background:linear-gradient(0deg,rgba(4,7,9,.92),rgba(4,7,9,.2) 72%)}
   .model-grid,.latest-grid{grid-template-columns:1fr 1fr}.engineering-section,.about-layout{grid-template-columns:1fr;gap:40px}
+  #hulls-grid{grid-template-columns:1fr}
+  #hulls-grid .model-card{min-height:440px}
   .modal-content{grid-template-columns:1fr;padding-top:90px}.modal-main-image-wrap{min-height:420px}
 }
 @media(max-width:650px){
   .section{padding-top:72px;padding-bottom:72px}.section-heading{display:block}.section-heading>p{margin-top:22px}
-  h1{font-size:64px}.hero-text{font-size:15px}.model-grid,.latest-grid{grid-template-columns:1fr}.model-card{min-height:380px}
+  h1{font-size:40px;line-height:1.08}.hero-text{font-size:15px}.model-grid,.latest-grid{grid-template-columns:1fr}.model-card{min-height:380px}
+  #hulls-grid .model-card{min-height:360px}
+  #hulls-grid .card-copy h3{font-size:42px}
   .engineering-panel>div{grid-template-columns:42px 1fr}.engineering-panel p{grid-column:2}.latest-card{height:280px}
   .site-footer{align-items:flex-start;flex-direction:column}.footer-links{flex-direction:column;gap:12px}
   .mobile-menu.is-open{display:flex}.modal-info h3{font-size:50px}.modal-main-image-wrap{min-height:300px}
