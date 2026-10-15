@@ -1,0 +1,1 @@
+Rebuilt model asset folders. Mercury 300 and Mercury 400 use fresh JPEG files generated from the original renders. Other models are organized under assets/models and referenced locally where applicable.
