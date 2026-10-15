@@ -1,29 +1,50 @@
 const RAW_ASSET_BASE = 'https://raw.githubusercontent.com/Rc3dMarine/r3d-marine-website/main/assets/';
 const asset = (name) => RAW_ASSET_BASE + name.split('/').map(encodeURIComponent).join('/');
+const localAsset = (name) => `assets/${name}`;
 
 const models = [
   {
-    name: 'Mercury 600', category: 'Engine', status: 'Available', hasGallery: false,
+    name: 'Mercury 600', category: 'Engine', status: 'Available', hasGallery: true,
     description: 'Functional scale RC outboard inspired by the Mercury 600, developed as a detailed printable model with separate body components and an internal drivetrain concept for powered RC applications.',
-    images: [asset('mercury-600-1.webp')],
+    images: [
+      localAsset('mercury-600-1.webp'),
+      localAsset('mercury-600-2.webp'),
+      localAsset('mercury-600-3.webp'),
+      localAsset('mercury-600-4.webp')
+    ],
     cults: 'https://cults3d.com/en/3d-model/game/mercury-600-rc-outboard-lagiosg-2'
   },
   {
-    name: 'Mercury 400', category: 'Engine', status: 'Under development', hasGallery: false,
+    name: 'Mercury 400', category: 'Engine', status: 'Under development', hasGallery: true,
     description: 'Scale RC outboard model inspired by the Mercury 400, currently under development with focus on recognizable exterior proportions and printable multi-part construction for marine model projects.',
-    images: [asset('mercury-400-1.webp')],
+    images: [
+      localAsset('mercury-400-1.webp'),
+      localAsset('mercury-400-2.webp'),
+      localAsset('mercury-400-3.webp'),
+      localAsset('mercury-400-4.webp')
+    ],
     cults: ''
   },
   {
-    name: 'Mercury 300', category: 'Engine', status: 'Under development', hasGallery: false,
+    name: 'Mercury 300', category: 'Engine', status: 'Under development', hasGallery: true,
     description: 'Compact functional-scale outboard project inspired by the Mercury 300, currently under development for 3D printing with an emphasis on the external engine form and RC integration.',
-    images: [asset('mercury-300-1.webp')],
+    images: [
+      localAsset('mercury-300-1.webp'),
+      localAsset('mercury-300-2.webp'),
+      localAsset('mercury-300-3.webp'),
+      localAsset('mercury-300-4.webp')
+    ],
     cults: ''
   },
   {
-    name: 'Rafnar 1200 Cross Cabin', category: 'Hull', status: 'Available', hasGallery: false,
+    name: 'Rafnar 1200 Cross Cabin', category: 'Hull', status: 'Available', hasGallery: true,
     description: 'Detailed scale interpretation of the Rafnar 1200 Cross Cabin, developed as an RC-ready marine model with the distinctive hull, cabin and twin-outboard arrangement reproduced for 3D printing.',
-    images: [asset('rafnar-1200-1.webp')],
+    images: [
+      localAsset('rafnar-1200-1.webp'),
+      localAsset('rafnar-1200-2.webp'),
+      localAsset('rafnar-1200-3.webp'),
+      localAsset('rafnar-1200-4.webp')
+    ],
     cults: 'https://cults3d.com/en/3d-model/game/rafnar-1200-cross-cabin'
   },
   {
@@ -41,7 +62,7 @@ const models = [
   {
     name: 'Universal Trim System', category: 'RC System', status: 'Under development', hasGallery: false,
     description: 'Universal RC outboard trim mechanism under development, built around a compact pivoting mount for functional scale outboard installations.',
-    images: [asset('universal-trim-1.webp')],
+    images: [localAsset('universal-trim-1.webp')],
     cults: ''
   }
 ];
