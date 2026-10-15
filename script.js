@@ -51,7 +51,7 @@ const models = [
   {
     name: 'Universal Trim System', category: 'RC System', status: 'Under development',
     description: 'Universal RC outboard trim mechanism under development, built around a compact pivoting mount for functional scale outboard installations.',
-    images: [asset('universal-trim-1.webp')],
+    images: [localAsset('universal-trim-1.webp')],
     cults: ''
   }
 ];
